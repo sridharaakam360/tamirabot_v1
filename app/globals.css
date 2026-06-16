@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ */
+/* Design tokens recovered from the original Tamirabot Tailwind v4 build */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-accent: #f04f54;
+  --color-dark: #24125f;
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-muted: #7d7d8c;
+
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), "Poppins", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #1a0e4a;
+  font-family: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll-reveal — mirrors the on-view fade/slide animations the       */
+/* original client-rendered SPA applied to most sections.              */
+/* Elements carry `data-reveal`; RevealObserver adds `.is-visible`.    */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  [data-reveal="left"] {
+    transform: translateX(-32px);
+  }
+  [data-reveal="right"] {
+    transform: translateX(32px);
+  }
+  [data-reveal="right-sm"] {
+    transform: translateX(20px);
+  }
+  [data-reveal="scale"] {
+    transform: scale(1.05);
+  }
+  [data-reveal="fade"] {
+    transform: none;
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RevealObserver from "@/components/RevealObserver";
+import { asset } from "@/lib/asset";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   title: "Tamirabot - EV Charging Solutions",
   description:
     "Tamirabot - Crafting EV Connectors that Exceed International Standards",
-  icons: { icon: "/images/favicon.png" },
+  icons: { icon: asset("/images/favicon.png") },
 };
 
 export default function RootLayout({

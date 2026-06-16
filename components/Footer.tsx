@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 const PAGE_LINKS = [
   { href: "/", label: "Home" },
@@ -25,7 +26,7 @@ export default function Footer() {
             <img
               alt="Tamirabot"
               className="h-9 w-auto brightness-0 invert mb-4"
-              src="/images/logo.svg"
+              src={asset("/images/logo.svg")}
             />
             <p className="text-sm text-white/50 leading-relaxed">
               Crafting EV connectors that exceed international standards.

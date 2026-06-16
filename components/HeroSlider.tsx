@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { asset } from "@/lib/asset";
 
 const SLIDES = [
   { src: "/images/type2-connector.svg", caption: "Type 2 Connector", alt: "Type 2 Vehicle Connector" },
@@ -31,7 +32,7 @@ export default function HeroSlider() {
         <img
           alt={slide.alt}
           className="w-full h-full object-cover transition-opacity duration-500"
-          src={slide.src}
+          src={asset(slide.src)}
           key={slide.src}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#24125F]/60 via-transparent to-transparent" />

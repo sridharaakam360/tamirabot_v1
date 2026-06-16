@@ -1,6 +1,8 @@
 // Single source of truth for the Tamirabot product catalogue.
 // Recovered verbatim from the original compiled SPA (rendered DOM extraction).
 
+import { asset } from "./asset";
+
 export type Pair = [label: string, value: string];
 
 export interface SpecTable {
@@ -32,7 +34,7 @@ export interface Product {
   tables: SpecTable[];
 }
 
-export const PRODUCTS: Product[] = [
+const RAW_PRODUCTS: Product[] = [
   {
     slug: "type6-connector",
     name: "TYPE 6 — Vehicle Connector",
@@ -483,6 +485,12 @@ export const PRODUCTS: Product[] = [
     ],
   },
 ];
+
+// Prefix every product image with the deploy base path (GitHub Pages subpath).
+export const PRODUCTS: Product[] = RAW_PRODUCTS.map((p) => ({
+  ...p,
+  image: asset(p.image),
+}));
 
 export const HOME_PRODUCTS = PRODUCTS.slice(0, 4);
 

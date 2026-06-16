@@ -1,4 +1,5 @@
 import CtaBanner from "@/components/CtaBanner";
+import { asset } from "@/lib/asset";
 
 export const metadata = {
   title: "About — Tamirabot",
@@ -80,7 +81,7 @@ export default function AboutPage() {
           <div className="relative" data-reveal>
             <div className="rounded-3xl overflow-hidden shadow-lg border border-[#E5E7EB]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="Tamirabot EV Connectors" className="w-full h-[420px] object-cover" src="/images/type2-gun-ccs2.svg" />
+              <img alt="Tamirabot EV Connectors" className="w-full h-[420px] object-cover" src={asset("/images/type2-gun-ccs2.svg")} />
             </div>
             <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-lg border border-[#E5E7EB]">
               <p className="text-2xl font-bold text-[#24125F]">5+</p>
@@ -132,7 +133,7 @@ export default function AboutPage() {
             <div className="relative" data-reveal>
               <div className="rounded-3xl overflow-hidden shadow-lg border border-[#E5E7EB]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt="Tamirabot Engineering" className="w-full h-[400px] object-cover" src="/images/type6-connector.svg" />
+                <img alt="Tamirabot Engineering" className="w-full h-[400px] object-cover" src={asset("/images/type6-connector.svg")} />
               </div>
             </div>
             <div data-reveal>

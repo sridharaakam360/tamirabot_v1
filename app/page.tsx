@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeroSlider from "@/components/HeroSlider";
 import { HOME_PRODUCTS } from "@/lib/products";
+import { asset } from "@/lib/asset";
 
 const HERO_STATS = [
   { value: "500+", label: "Connectors Shipped" },
@@ -323,7 +324,7 @@ export default function Home() {
           <div className="relative rounded-3xl overflow-hidden bg-[#24125F]" data-reveal>
             <div className="absolute inset-0 opacity-10" aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="" className="w-full h-full object-cover" src="/images/type6-connector.svg" />
+              <img alt="" className="w-full h-full object-cover" src={asset("/images/type6-connector.svg")} />
             </div>
             <div className="pointer-events-none absolute -top-32 -right-32 w-72 md:w-96 h-72 md:h-96 rounded-full bg-[#F04F54] opacity-15" aria-hidden="true" />
             <div className="relative z-10 px-8 py-16 md:px-16 lg:px-20 md:py-20 lg:py-24 flex flex-col lg:flex-row items-center justify-between gap-10">

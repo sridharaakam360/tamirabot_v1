@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { asset } from "@/lib/asset";
 
 const NAV = [
   { href: "/", label: "Home", match: (p: string) => p === "/" },
@@ -25,7 +26,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-[80px] flex items-center justify-between">
         <Link className="flex items-center" aria-label="Tamirabot Home" href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img alt="Tamirabot" className="h-[36px] w-auto" src="/images/logo.svg" />
+          <img alt="Tamirabot" className="h-[36px] w-auto" src={asset("/images/logo.svg")} />
         </Link>
 
         <div className="hidden lg:flex items-center gap-10">

@@ -9,12 +9,18 @@ const NAV = [
   { href: "/", label: "Home", match: (p: string) => p === "/" },
   { href: "/about", label: "About", match: (p: string) => p.startsWith("/about") },
   { href: "/products", label: "Products", match: (p: string) => p.startsWith("/product") },
+  { href: "/blog", label: "Blog", match: (p: string) => p.startsWith("/blog") },
   { href: "/contact", label: "Contact", match: (p: string) => p.startsWith("/contact") },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
 
   return (
     <nav
@@ -26,7 +32,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-[80px] flex items-center justify-between">
         <Link className="flex items-center" aria-label="Tamirabot Home" href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img alt="Tamirabot" className="h-[36px] w-auto" src={asset("/images/logo.svg")} />
+          <img alt="Tamirabot" className="h-[44px] w-auto" src={asset("/images/logo.webp")} />
         </Link>
 
         <div className="hidden lg:flex items-center gap-10">

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { asset } from "@/lib/asset";
 
 const PAGE_LINKS = [
@@ -17,6 +20,11 @@ const PRODUCT_LINKS = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <footer className="bg-[#24125F]">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -26,7 +34,7 @@ export default function Footer() {
             <img
               alt="Tamirabot"
               className="h-9 w-auto brightness-0 invert mb-4"
-              src={asset("/images/logo.svg")}
+              src={asset("/images/logo.webp")}
             />
             <p className="text-sm text-white/50 leading-relaxed">
               Crafting EV connectors that exceed international standards.

@@ -443,9 +443,9 @@ function authorize() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a 
-              href="/blog" 
-              target="_blank" 
+            <a
+              href="/tamirabot_v1/blog"
+              target="_blank"
               className="text-sm font-semibold text-white/80 hover:text-white transition-colors flex items-center gap-1.5"
             >
               View Site
